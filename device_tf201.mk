@@ -151,6 +151,6 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := tf201
 PRODUCT_DEVICE := tf201
-PRODUCT_MODEL := tf201
+PRODUCT_MODEL := Transformer Prime TF201
 PRODUCT_BRAND := asus
 PRODUCT_MANUFACTURER := asus
