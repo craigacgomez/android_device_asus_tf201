@@ -7,7 +7,7 @@ on early-init
     # for backwards compatibility
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
-    mkdir /storage 0050 system sdcard_r
+    mkdir /storage 0550 system sdcard_r
     mkdir /storage/sdcard0 0000 system system
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
@@ -119,14 +119,15 @@ on boot
 
 # Power management settings
     chown system system /sys/module/cpu_tegra3/parameters/no_lp
-    write /sys/module/cpu_tegra3/parameters/no_lp 0
+    write /sys/module/cpu_tegra3/parameters/no_lp 1
     #write /sys/module/tegra3_emc/parameters/emc_enable 0
     #write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1000000
     write /sys/devices/system/cpu/cpufreq/interactive/boost_factor 2
+    write /sys/devices/system/cpu/cpufreq/interactive/input_boost 1
     write /sys/devices/system/cpu/cpufreq/interactive/sustain_load 80
     write /sys/module/cpu_tegra3/parameters/auto_hotplug 1
     #write /sys/module/cpuidle_t3/parameters/lp2_0_in_idle 0
-    write /sys/module/cpuidle/parameters/lp2_in_idle 1
+    write /sys/module/cpuidle/parameters/lp2_in_idle 0
     chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_input_time
 
 # Interactive governor settings
@@ -255,6 +256,7 @@ service iprenew_p2p /system/bin/dhcpcd -n
     oneshot
 
 service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
     disabled
     oneshot
 
@@ -270,7 +272,7 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
     oneshot
 #Sensor load calibration files end
 
-# create virtual SD card at /mnt/sdcard, based on the /data/media directory
+# create virtual SD card at /storage/sdcard0, based on the /data/media directory
 # deamon will drop to user/group system/media_rw after initializing
 # underlying files in /data/media wil be created with user and group media_rw (1023)
 service sdcard /system/bin/sdcard /data/media 1023 1023
@@ -436,7 +438,7 @@ service ril-daemon-test /system/bin/rild
     socket rild-testmode stream 666 root radio
     socket rild-debug stream 660 radio system
     user root
-    group radio cache inet misc audio sdcard_rw
+    group radio cache inet misc audio sdcard_rw sdcard_r
     disabled
 
 on property:ril.testmode=1
@@ -472,3 +474,21 @@ service setup_fs /system/bin/setup_fs \
     user root
     group root
     oneshot
+
+#Raydium touch setting
+service rm_ts_service /system/bin/rm_ts_server
+    class main
+
+#Blutooth DUN support 
+service BtService /system/bin/sh /system/etc/BtService.sh
+    user root
+    group root
+    disabled
+    oneshot
+    
+# WV KB OTA
+service wvdrm /system/bin/wvdrmserver
+    class main
+    user drm
+    group drm media
+
