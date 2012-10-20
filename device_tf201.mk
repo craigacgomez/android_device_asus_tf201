@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
 # Properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
+    wifi.supplicant_scan_interval=180 \
     ro.opengles.version=131072 \
     persist.sys.usb.config=mtp,adb \
     ro.sf.lcd_density=160
