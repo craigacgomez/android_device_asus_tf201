@@ -1,0 +1,4 @@
+Device tree for the ASUS Transformer Prime TF201. Uses the new Jelly Bean files and requires the new Jelly Bean kernel & bootloader.
+
+Credits to the AndroidRoot & CyanogenMod teams.
+Modifications by Craig Gomez (craigacgomez)

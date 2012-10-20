@@ -1,6 +1,17 @@
 bin/sensors-config
 bin/glgps
 bin/tf_daemon
+bin/camera_fw_check
+bin/isp_fw_update
+bin/nv_hciattach
+bin/pppd_btdun
+bin/ps3service
+bin/rm_ts_server
+bin/tegrastats
+bin/touch_fw_update
+bin/wvdrmserver
+
+data/srs_processing.cfg
 
 etc/enctune.conf
 etc/u-blox.conf
@@ -10,6 +21,7 @@ etc/nvaudio_conf_RT5631.xml
 etc/nvaudio_conf_RT5642.xml
 etc/nvaudio_conf_WM8903.xml
 etc/nvcamera.conf
+etc/BtService.sh
 
 etc/firmware/nvavp_aud_ucode.bin
 etc/firmware/nvavp_os_eff00000.bin
@@ -43,6 +55,8 @@ lib/hw/audio.primary.tegra.so
 lib/hw/camera.tegra.so
 lib/hw/lights.cardhu.so
 lib/hw/gpsdongle.tegra.so
+lib/hw/gpsinternal.tegra.so
+lib/hw/ts.default.so
 
 lib/libardrv_dynamic.so
 lib/libnvmm_contentpipe.so
@@ -73,6 +87,7 @@ lib/libmplmpu3050.so
 lib/libmllite6050.so      
 lib/libmplmpu6050.so
 lib/libmlplatform3050.so
+lib/libinvensense_hal.so
 
 
 lib/libnvmmlite.so
@@ -132,6 +147,10 @@ lib/libnvomx.so
 lib/libnvmm_camera.so
 lib/libnvos.so
 
+lib/libsrsprocessing.so
+lib/libWVDrmUtils.so
+lib/libWVphoneAPI.so
+
 usr/share/alsa/alsa.conf
 usr/share/alsa/cards/aliases.conf
 usr/share/alsa/pcm/center_lfe.conf
@@ -149,3 +168,12 @@ usr/share/alsa/pcm/surround41.conf
 usr/share/alsa/pcm/surround50.conf
 usr/share/alsa/pcm/surround51.conf
 usr/share/alsa/pcm/surround71.conf
+
+vendor/lib/libwvdrm_L3.so
+vendor/lib/libwvm.so
+vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/drm/libdrmwvmplugin.so
+
+vendor/lib/hw/power.cardhu.so
+
+xbin/rfcomm
