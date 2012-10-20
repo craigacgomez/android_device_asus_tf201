@@ -74,7 +74,6 @@ lib/libEGL.so
 lib/libnvmmlite_msaudio.so
 lib/libnvrm_graphics.so
 
-
 lib/libami_sensor_mw.so
 lib/libmllite.so
 lib/libmplmpu.so
@@ -88,7 +87,6 @@ lib/libmllite6050.so
 lib/libmplmpu6050.so
 lib/libmlplatform3050.so
 lib/libinvensense_hal.so
-
 
 lib/libnvmmlite.so
 lib/libnvrm.so
@@ -173,7 +171,5 @@ vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/drm/libdrmwvmplugin.so
-
-vendor/lib/hw/power.cardhu.so
 
 xbin/rfcomm
