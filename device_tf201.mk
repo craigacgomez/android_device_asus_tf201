@@ -110,7 +110,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
     ro.opengles.version=131072 \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp,adb \
+    ro.sf.lcd_density=160
 
 # Tegra 3 specific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
