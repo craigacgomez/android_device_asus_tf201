@@ -98,7 +98,7 @@ on boot
 # NTFS and exFAT driver
     insmod /system/lib/modules/tntfs.ko
     insmod /system/lib/modules/texfat.ko
-    
+
 # Sensor
     chown system system /sys/bus/iio/devices/device0/als_ir_mode
     chown system system /sys/bus/iio/devices/device0/als_enable
@@ -134,7 +134,7 @@ on boot
     write /sys/module/cpuidle/parameters/lp2_in_idle 0
     chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_input_time
 
-# Setup CPU for "balanced" mode 
+# Setup CPU for "balanced" mode
     setprop sys.cpu.mode 1
 
 # Interactive governor settings

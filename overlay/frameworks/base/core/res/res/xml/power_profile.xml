@@ -57,10 +57,10 @@
       <value>760000</value>
       <value>880000</value>
       <value>1000000</value>
-	  <value>1100000</value>
-	  <value>1200000</value>
-	  <value>1300000</value>
-	  <value>1400000</value>
+      <value>1100000</value>
+      <value>1200000</value>
+      <value>1300000</value>
+      <value>1400000</value>
   </array>
   <!-- Power consumption when CPU is idle -->
   <item name="cpu.idle">6.7</item>
@@ -74,10 +74,10 @@
       <value>216.610</value>
       <value>245.320</value>
       <value>266.043</value>
-	  <value>278.171</value>
-	  <value>322.899</value>
-	  <value>339.122</value>
-	  <value>312.768</value>
+      <value>278.171</value>
+      <value>322.899</value>
+      <value>339.122</value>
+      <value>312.768</value>
   </array>
   <!-- This is the battery capacity in mAh -->
   <!--not used in HC 3.1-->
