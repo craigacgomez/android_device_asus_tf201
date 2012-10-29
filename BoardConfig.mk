@@ -14,20 +14,21 @@
 # limitations under the License.
 #
 
+# Camera defines
 USE_CAMERA_STUB := false
 
-# inherit from the proprietary version
+# Inherit from the proprietary version
 -include vendor/asus/tf201/BoardConfigVendor.mk
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Board nameing
+# Board defines
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := tegra
 TARGET_BOOTLOADER_BOARD_NAME := cardhu
+TARGET_NO_BOOTLOADER := true
 
 # Target arch settings
-TARGET_NO_BOOTLOADER := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -43,6 +44,9 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE :=
+TARGET_KERNEL_SOURCE := kernel/asus/tf201
+TARGET_KERNEL_CONFIG := tegra3_android_defconfig
+TARGET_PREBUILT_KERNEL := device/asus/tf201/kernel
 
 # EGL settings
 BOARD_EGL_CFG := device/asus/tf201/prebuilt/egl.cfg
@@ -59,7 +63,7 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Support for dock battery
 TARGET_HAS_DOCK_BATTERY := true
 
-# Wifi related defines
+# Wifi related defines (BCMDHD)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
@@ -71,6 +75,7 @@ WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
 
+# Images defines
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
@@ -79,14 +84,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 29850022707
 BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
-# Try to build the kernel
-TARGET_KERNEL_SOURCE := kernel/asus/tf201
-TARGET_KERNEL_CONFIG := tegra3_android_defconfig
-
-# Prebuilt Kernel Fallback
-TARGET_PREBUILT_KERNEL := device/asus/tf201/kernel
-
-# Coustom Tools
+# Custom Tools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/asus/tf201/releasetools/tf201_ota_from_target_files
 
 # Recovery Options
@@ -95,3 +93,9 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_INITRC := device/asus/tf201/recovery/init.rc
 BOARD_HAS_SDCARD_INTERNAL := true
+
+# GPS defines
+BOARD_HAVE_GPS := true
+
+# Audio defines
+BOARD_USES_GENERIC_AUDIO := false
