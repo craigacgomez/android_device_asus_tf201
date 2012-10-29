@@ -56,6 +56,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/prebuilt/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl
 
+# Any prebuilt kernel modules
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/prebuilt/modules/baseband_usb_chr.ko:system/lib/modules/baseband_usb_chr.ko \
+	$(LOCAL_PATH)/prebuilt/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+	$(LOCAL_PATH)/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
+	$(LOCAL_PATH)/prebuilt/modules/raw_ip_net.ko:system/lib/modules/raw_ip_net.ko \
+	$(LOCAL_PATH)/prebuilt/modules/texfat.ko:system/lib/modules/texfat.ko \
+	$(LOCAL_PATH)/prebuilt/modules/tntfs.ko:system/lib/modules/tntfs.ko
 
 # Camera/WiFi/BT Firmware
 PRODUCT_COPY_FILES += \
@@ -81,7 +89,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
-    $(LOCAL_PATH)/asusdec/com.cyanogenmod.asusdec.xml:system/etc/permissions/com.cyanogenmod.asusdec.xml
+    $(LOCAL_PATH)/asusdec/com.cyanogenmod.asusdec.xml:system/etc/permissions/com.cyanogenmod.asusdec.xml \
+    $(LOCAL_PATH)/prebuilt/com.asus.hardware.00.xml:system/etc/permissions/com.asus.hardware.00.xml
 
 # Build characteristics setting 
 PRODUCT_CHARACTERISTICS := tablet
@@ -94,6 +103,9 @@ PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory \
     make_ext4fs \
+    l2ping \
+    hcitool \
+    bttest \
     setup_fs \
     audio.a2dp.default \
     audio.usb.default \
@@ -149,7 +161,8 @@ $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/asus/tf201/tf201-vendor.mk)
 
 # Copy bcm4329 firmware
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
+#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
+$(call inherit-product-if-exists, /hardware/broadcom/wlan/bcm4329/Android.mk)
 
 # Device nameing
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
