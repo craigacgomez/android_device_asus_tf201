@@ -16,7 +16,7 @@
 PRODUCT_PACKAGES := \
 	HoloSpiralWallpaper \
 	LiveWallpapersPicker \
-	VisualizationWallpapers \
+	VisualizationWallpapers
 
 PRODUCT_PACKAGES += \
     	Camera
