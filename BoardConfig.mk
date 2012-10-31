@@ -96,6 +96,3 @@ BOARD_HAS_SDCARD_INTERNAL := true
 
 # GPS defines
 BOARD_HAVE_GPS := true
-
-# Audio defines
-BOARD_USES_GENERIC_AUDIO := false
