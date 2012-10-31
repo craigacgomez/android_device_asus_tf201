@@ -99,6 +99,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudioutils \
     libinvensense_mpl \
+    AutoParts_tfp \
     blobpack_tfp \
     mischelp
 
