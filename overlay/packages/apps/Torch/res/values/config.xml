@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/* //device/apps/common/assets/res/any/strings.xml
-**
-** Copyright 2006, The Android Open Source Project
+/*
+** Copyright 2011, The CyanogenMod Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -17,12 +16,10 @@
 ** limitations under the License.
 */
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Add reboot to APX mode -->
-    <add-resource type="string" name="reboot_apx"></add-resource>
-
-    <!-- Button to reboot the phone into APX mode, within the Reboot Options dialog -->
-    <string name="reboot_apx">NVIDIA APX mode</string>
-
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+    <!-- If there is no sysfs-based control mechanism, enable this -->
+    <bool name="useCameraInterface">true</bool>
 </resources>
