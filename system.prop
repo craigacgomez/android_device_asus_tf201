@@ -2,3 +2,9 @@
 # system.prop for tf201
 #
 ro.carrier=wifi-only
+
+ro.device.cpu=1.4 GHz Tegra 3 T30 Quad-core ARM Cortex-A9
+ro.device.gpu=NVIDIA 520 MHz ULP GeForce
+ro.device.rear_cam=8 MP
+ro.device.front_cam=1.2 MP
+ro.device.screen_res=1280x800

@@ -287,9 +287,6 @@
     <!-- Is this is false, trun of the screen-off animation -->
     <bool name="config_screenOffAnimation">false</bool>
 
-    <!-- Setting to false will disable CM's IME switcher implementation for tablets -->
-    <bool name="config_show_cmIMESwitcher">false</bool>
-
     <!-- If this is true, allow all rotaion angles -->
     <bool name="config_allowAllRotations">true</bool>
 
