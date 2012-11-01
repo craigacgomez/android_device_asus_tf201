@@ -18,6 +18,19 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Add reboot to fastboot mode -->
+    <add-resource type="string" name="reboot_fastboot"></add-resource>
+
+    <!-- Add reboot to APX mode -->
+    <add-resource type="string" name="reboot_apx"></add-resource>
+
+    <!-- Button to reboot the phone into fastboot mode, within the Reboot Options dialog -->
+    <string name="reboot_fastboot">Fastboot</string>
+
+    <!-- Button to reboot the phone into APX mode, within the Reboot Options dialog -->
+    <string name="reboot_apx">NVIDIA APX mode</string>
+
     <!-- Storage description for internal storage. [CHAR LIMIT=NONE] -->
     <string name="storage_internal">Internal Storage</string>
 
@@ -35,5 +48,6 @@
 
     <!-- Storage description for SDCard storage. [CHAR LIMIT=NONE] -->
     <add-resource type="string" name="storage_sdreader"></add-resource>
-    <string name="storage_sdreader">Dock SD CARD</string>
+    <string name="storage_sdreader">Dock SD Card</string>
+
 </resources>
